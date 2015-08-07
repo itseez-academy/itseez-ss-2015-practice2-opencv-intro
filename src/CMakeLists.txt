@@ -1,6 +1,6 @@
-set(target ${PRACTICE1_LIBRARY})
+set(target ${PRACTICE2_LIBRARY})
 
-FILE(GLOB hdrs "*.h*" "${PRACTICE1_INCLUDE}/*.h*")
+FILE(GLOB hdrs "*.h*" "${PRACTICE2_INCLUDE}/*.h*")
 FILE(GLOB srcs "*.cpp")
 
 ADD_LIBRARY(${target} STATIC ${srcs} ${hdrs})
