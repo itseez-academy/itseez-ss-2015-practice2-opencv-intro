@@ -2,4 +2,9 @@
 
 #include <string>
 
-int parseArguments(int argc, char **argv, std::string &fileName);
+struct Parameters
+{
+    std::string imgFileName;
+};
+
+int parseArguments(int argc, char **argv, Parameters &params);

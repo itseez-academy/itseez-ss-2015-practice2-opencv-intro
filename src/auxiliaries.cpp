@@ -1,11 +1,11 @@
 #include "auxiliaries.hpp"
 
-int parseArguments(int argc, char **argv, std::string &fileName)
+int parseArguments(int argc, char **argv, Parameters &params)
 {
     if (argc < 2)
     {
         return 1;
     }
-    fileName = std::string(argv[1]);
+    params.imgFileName = std::string(argv[1]);
     return 0;
 }

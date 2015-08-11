@@ -10,8 +10,8 @@ using namespace cv;
 int main(int argc, char **argv)
 {
     const std::string caption = "Median filter";
-    std::string fileName;
-	if (parseArguments(argc, argv, fileName) != 0)
+    Parameters params;
+	if (parseArguments(argc, argv, params) != 0)
     {
         cout << "practice2 <img_name>" << endl;
         cout << "<img_name> - image name for filtering" << endl;
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
     Mat src, dst;
     
-    if (getFrame(fileName, src) != 0)
+    if (getFrame(params.imgFileName, src) != 0)
     {
         cout << "Error: \'src\' image is null or empty!" << endl;
         return 2;
