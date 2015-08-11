@@ -67,7 +67,7 @@
   4. Настроить upstream-репозиторий:
   
   ```
-  $ git remote add upstream https://github.com/github-account/practice2-opencv-intro
+  $ git remote add upstream https://github.com/Itseez-NNSU-SummerSchool2015/practice2-opencv-intro
   ```
   
   5. Настроить имя пользователя, из под которого будут выполняться все операции с репозиторией Git:
