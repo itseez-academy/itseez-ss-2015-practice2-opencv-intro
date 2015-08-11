@@ -108,4 +108,4 @@
   
   **Примечание:** подробная инструкция по сборке проекта, запуска тестов была описана 
   в [практической работе по освоению инструментов разработки](https://github.com/Itseez-NNSU-SummerSchool2015/practice1-devtools).
-  При сборке проекта в командной строке cmake необходимо указать опцию -DOpenCV_DIR="<path-to-OpenCVConfig.cmake>"
+  При сборке проекта в командной строке cmake необходимо указать опцию -DOpenCV_DIR="path-to-OpenCVConfig.cmake"
