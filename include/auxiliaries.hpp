@@ -1,3 +1,5 @@
 #pragma once
 
-int parseArguments(int argc, char **argv);
+#include <string>
+
+int parseArguments(int argc, char **argv, std::string &fileName);

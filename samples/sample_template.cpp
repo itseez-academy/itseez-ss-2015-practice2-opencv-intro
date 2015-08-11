@@ -9,23 +9,30 @@ using namespace cv;
 
 int main(int argc, char **argv)
 {
-	if (parseArguments(argc, argv) != 0)
+    const std::string caption = "Median filter";
+    std::string fileName;
+	if (parseArguments(argc, argv, fileName) != 0)
     {
-        cout << "Incorrect input parameters!" << endl;
+        cout << "practice2 <img_name>" << endl;
+        cout << "<img_name> - image name for filtering" << endl;
         return 1;
     }
 
     Mat src, dst;
     
-    if (getFrame(src) != 0)
+    if (getFrame(fileName, src) != 0)
     {
         cout << "Error: \'src\' image is null or empty!" << endl;
         return 2;
     }
     
-    processFrame(src, dst);
+    if (processFrame(src, dst) != 0)
+    {
+        cout << "Error: Filtering failed!" << endl;
+        return 3;
+    }
     
-    show(src, dst);
+    show(caption, src, dst);
 
 	return 0;
 }
