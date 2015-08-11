@@ -3,15 +3,24 @@
 
 TEST(practice2, median_filter_test)
 {
-    std::string input = "./testdata/image.jpg";
-    std::string expOutput = "./testdata/image_median_1.jpg";
+    std::string input = "./testdata/image.png";
+    std::string expOutput = "./testdata/image_median_11.png";
 
     Mat src, expDst, dst; 
     getFrame(input, src);
+    if (src.empty())
+    {
+        FAIL() << "Can't read" + input + " image";
+    }
     getFrame(expOutput, expDst);
     if (expDst.empty())
     {
         FAIL() << "Can't read" + expOutput + " image";
+    }
+
+    if (processFrame(src, dst) != 0)
+    {
+        FAIL() << "Can't execute median filtering";
     }
 
     Mat diff = abs(expDst - dst);

@@ -14,6 +14,10 @@ int processFrame(const Mat& src, Mat& dst)
 {
     const int kSize = 11;
     medianBlur(src, dst, kSize);
+    if (dst.empty())
+    {
+        return 1;
+    }
     return 0;
 }
 
