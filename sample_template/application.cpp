@@ -37,7 +37,7 @@ int Application::processFrame(const Mat& src, Mat& dst)
     return 0;
 }
 
-int Application::show(const std::string &caption, const Mat& src, const Mat& dst)
+int Application::showFrame(const std::string &caption, const Mat& src, const Mat& dst)
 {
     if (src.rows != dst.rows || src.cols != dst.cols)
     {

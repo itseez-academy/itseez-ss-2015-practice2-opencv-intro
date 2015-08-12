@@ -16,7 +16,8 @@ class Application
 
     int getFrame(const std::string &fileName, cv::Mat& src);
     int processFrame(const cv::Mat& src, cv::Mat& dst);
-    int show(const std::string &caption, const cv::Mat& src, const cv::Mat& dst);
+    int showFrame(const std::string &caption, const cv::Mat& src, const cv::Mat& dst);
+
  private:
     Processing processor;
 };
