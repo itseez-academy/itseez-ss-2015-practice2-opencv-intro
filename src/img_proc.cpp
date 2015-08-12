@@ -16,7 +16,8 @@ int processFrame(const Mat& src, Mat& dst)
 
     cv::Rect region(src.rows/4, src.cols/4, src.rows/2, src.cols/2);
     const int kSize = 11;
-    medianBlur(dst(region), dst(region), kSize);
+    Mat roi = dst(region);
+    medianBlur(roi, roi, kSize);
     rectangle(dst, region, Scalar(255, 0, 0));
 
     if (dst.empty())
