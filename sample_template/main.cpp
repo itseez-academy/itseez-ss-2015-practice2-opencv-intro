@@ -1,40 +1,47 @@
 #include <opencv2/core/core.hpp>
 #include <iostream>
 
-#include "auxiliaries.hpp"
-#include "img_proc.hpp"
+#include "application.hpp"
 
 using namespace std;
 using namespace cv;
 
+enum ErrorCode {
+    OK,
+    WRONG_ARGUMENTS,
+    WRONG_INPUT,
+    CANT_PROCESS
+};
+
 int main(int argc, const char **argv)
 {
-    Parameters params;
-    if (parseArguments(argc, argv, params) != 0)
+    Application app;
+    Application::Parameters params;
+
+    if (app.parseArguments(argc, argv, params) != 0)
     {
         cout << "practice2 <image_name>" << endl;
         cout << "<image_name> - image name for filtering" << endl;
-        return 1;
+        return WRONG_ARGUMENTS;
     }
 
     Mat src;
-    if (getFrame(params.imgFileName, src) != 0)
+    if (app.getFrame(params.imgFileName, src) != 0)
     {
         cout << "Error: \'src\' image is null or empty!" << endl;
-        return 2;
+        return WRONG_INPUT;
     }
 
     Mat dst;
-    if (processFrame(src, dst) != 0)
+    if (app.processFrame(src, dst) != 0)
     {
         cout << "Error: Filtering failed!" << endl;
-        return 3;
+        return CANT_PROCESS;
     }
 
-    const std::string caption = "OpenCV Sample";
     char key = 0;
     while(key != 27) // Esc
-        key = show(caption, src, dst);
+        key = app.showFrame("OpenCV Sample", src, dst);
 
-	return 0;
+	return OK;
 }

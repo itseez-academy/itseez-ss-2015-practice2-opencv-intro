@@ -1,6 +1,21 @@
-#include "img_proc.hpp"
+#include "application.hpp"
+#include "processing.hpp"
 
-int getFrame(const std::string &fileName, Mat& src)
+#include <opencv2/highgui/highgui.hpp>
+
+using namespace cv;
+
+int Application::parseArguments(int argc, const char **argv, Application::Parameters &params)
+{
+    if (argc < 2)
+    {
+        return 1;
+    }
+    params.imgFileName = std::string(argv[1]);
+    return 0;
+}
+
+int Application::getFrame(const std::string &fileName, Mat& src)
 {
     src = imread(fileName);
     if (src.empty())
@@ -10,15 +25,9 @@ int getFrame(const std::string &fileName, Mat& src)
     return 0;
 }
 
-int processFrame(const Mat& src, Mat& dst)
+int Application::processFrame(const Mat& src, Mat& dst)
 {
-    src.copyTo(dst);
-
-    cv::Rect region(src.rows/4, src.cols/4, src.rows/2, src.cols/2);
-    const int kSize = 11;
-    Mat roi = dst(region);
-    medianBlur(roi, roi, kSize);
-    rectangle(dst, region, Scalar(255, 0, 0));
+    processor.processFrame(src, dst);
 
     if (dst.empty())
     {
@@ -28,7 +37,7 @@ int processFrame(const Mat& src, Mat& dst)
     return 0;
 }
 
-int show(const std::string &caption, const Mat& src, const Mat& dst)
+int Application::showFrame(const std::string &caption, const Mat& src, const Mat& dst)
 {
     if (src.rows != dst.rows || src.cols != dst.cols)
     {
