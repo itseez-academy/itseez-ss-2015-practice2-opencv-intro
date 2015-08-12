@@ -13,21 +13,13 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 
-set(PRACTICE2_LIBRARY ${PROJECT_NAME})
-set(PRACTICE2_TESTS "${PROJECT_NAME}_test")
-set(PRACTICE2_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/include")
-
-include_directories("${PRACTICE2_INCLUDE}")
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/3rdparty")
-
 find_package(OpenCV REQUIRED)
 set(LIBRARY_DEPS ${OpenCV_LIBS})
 
 # BUILD
-add_subdirectory(3rdparty)
-add_subdirectory(src)
-add_subdirectory(test)
-add_subdirectory(samples)
+add_subdirectory(sample_template)
+# Add you directory here
+# add_subdirectory(sample_YOUR_NAME)
 
 # REPORT
 message( STATUS "")
