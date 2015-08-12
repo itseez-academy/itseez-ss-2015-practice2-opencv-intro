@@ -9,30 +9,32 @@ using namespace cv;
 
 int main(int argc, char **argv)
 {
-    const std::string caption = "Median filter";
     Parameters params;
-	if (parseArguments(argc, argv, params) != 0)
+    if (parseArguments(argc, argv, params) != 0)
     {
-        cout << "practice2 <img_name>" << endl;
-        cout << "<img_name> - image name for filtering" << endl;
+        cout << "practice2 <image_name>" << endl;
+        cout << "<image_name> - image name for filtering" << endl;
         return 1;
     }
 
-    Mat src, dst;
-    
+    Mat src;
     if (getFrame(params.imgFileName, src) != 0)
     {
         cout << "Error: \'src\' image is null or empty!" << endl;
         return 2;
     }
-    
+
+    Mat dst;
     if (processFrame(src, dst) != 0)
     {
         cout << "Error: Filtering failed!" << endl;
         return 3;
     }
-    
-    show(caption, src, dst);
+
+    const std::string caption = "OpenCV Sample";
+    char key = 0;
+    while(key != 27) // Esc
+        key = show(caption, src, dst);
 
 	return 0;
 }

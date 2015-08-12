@@ -12,12 +12,18 @@ int getFrame(const std::string &fileName, Mat& src)
 
 int processFrame(const Mat& src, Mat& dst)
 {
+    src.copyTo(dst);
+
+    cv::Rect region(src.rows/4, src.cols/4, src.rows/2, src.cols/2);
     const int kSize = 11;
-    medianBlur(src, dst, kSize);
+    medianBlur(dst(region), dst(region), kSize);
+    rectangle(dst, region, Scalar(255, 0, 0));
+
     if (dst.empty())
     {
         return 1;
     }
+
     return 0;
 }
 
@@ -27,7 +33,7 @@ int show(const std::string &caption, const Mat& src, const Mat& dst)
     {
         return 1;
     }
-    
+
     Mat display(src.rows, src.cols + dst.cols, src.type());
     Mat srcRoi = display(Rect(0, 0, src.cols, src.rows));
     src.copyTo(srcRoi);
@@ -36,7 +42,7 @@ int show(const std::string &caption, const Mat& src, const Mat& dst)
 
     namedWindow(caption);
     imshow(caption, display);
-    waitKey();
+    char key = waitKey(1);
 
-    return 0;
+    return key;
 }

@@ -6,7 +6,7 @@ TEST(practice2, median_filter_test)
     std::string input = "./testdata/image.png";
     std::string expOutput = "./testdata/image_median_11.png";
 
-    Mat src, expDst, dst; 
+    Mat src, expDst, dst;
     getFrame(input, src);
     if (src.empty())
     {
