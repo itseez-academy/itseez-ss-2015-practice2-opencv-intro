@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "img_proc.hpp"
 
-TEST(practice2, median_filter_test)
+TEST(practice2, DISABLED_median_filter_test)
 {
     std::string input = "./testdata/image.png";
     std::string expOutput = "./testdata/image_median_11.png";
