@@ -6,8 +6,8 @@
 
 using namespace cv;
 
-int getFrame(Mat& src);
+int getFrame(const std::string &fileName, Mat& src);
 
 int processFrame(const Mat& src, Mat& dst);
 
-int show(const Mat& src, const Mat& dst);
+int show(const std::string &caption, const Mat& src, const Mat& dst);
