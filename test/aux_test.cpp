@@ -4,7 +4,7 @@
 TEST(practice2, parse_empty_arguments)
 {
     int argc = 0;
-    char **argv = 0;
+    const char **argv = 0;
     Parameters params;
     int res = parseArguments(argc, argv, params);
 
@@ -14,7 +14,7 @@ TEST(practice2, parse_empty_arguments)
 TEST(practice2, parse_incorrect_arguments)
 {
     int argc = 2;
-    char *argv[] = { "", "image.jpg" };
+    const char *argv[] = { "", "image.jpg" };
     Parameters params;
     int res = parseArguments(argc, argv, params);
 

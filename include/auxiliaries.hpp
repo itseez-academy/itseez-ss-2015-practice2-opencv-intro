@@ -7,4 +7,4 @@ struct Parameters
     std::string imgFileName;
 };
 
-int parseArguments(int argc, char **argv, Parameters &params);
+int parseArguments(int argc, const char **argv, Parameters &params);

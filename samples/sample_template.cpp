@@ -7,7 +7,7 @@
 using namespace std;
 using namespace cv;
 
-int main(int argc, char **argv)
+int main(int argc, const char **argv)
 {
     Parameters params;
     if (parseArguments(argc, argv, params) != 0)

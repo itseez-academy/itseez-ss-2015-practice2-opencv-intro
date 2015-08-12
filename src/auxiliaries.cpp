@@ -1,6 +1,6 @@
 #include "auxiliaries.hpp"
 
-int parseArguments(int argc, char **argv, Parameters &params)
+int parseArguments(int argc, const char **argv, Parameters &params)
 {
     if (argc < 2)
     {
