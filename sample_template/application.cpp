@@ -1,4 +1,4 @@
-#include "auxiliaries.hpp"
+#include "application.hpp"
 
 int parseArguments(int argc, const char **argv, Parameters &params)
 {

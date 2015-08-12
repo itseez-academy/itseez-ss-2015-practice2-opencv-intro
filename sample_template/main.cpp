@@ -1,8 +1,8 @@
 #include <opencv2/core/core.hpp>
 #include <iostream>
 
-#include "auxiliaries.hpp"
-#include "img_proc.hpp"
+#include "application.hpp"
+#include "processing.hpp"
 
 using namespace std;
 using namespace cv;

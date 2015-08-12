@@ -1,4 +1,4 @@
-#include "img_proc.hpp"
+#include "processing.hpp"
 
 int getFrame(const std::string &fileName, Mat& src)
 {
