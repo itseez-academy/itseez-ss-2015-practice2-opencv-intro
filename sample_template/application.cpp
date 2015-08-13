@@ -101,12 +101,12 @@ void onButtonsOnOffClick(int eventId, int x, int y, int flags, void *userData)
         (Application::GUIElementsState *)userData;
     if (onButtonClicked(elems->onButtonPlace, x, y))
     {
-        elems->state = Application::WindowState::OnFilter;
+        elems->state = Application::OnFilter;
         return;
     }
     if (offButtonClicked(elems->offButtonPlace, x, y))
     {
-        elems->state = Application::WindowState::OffFilter;
+        elems->state = Application::OffFilter;
         return;
     }
 }
