@@ -32,16 +32,13 @@ int main(int argc, const char **argv)
         return WRONG_INPUT;
     }
 
-    Mat dst;
-    if (app.processFrame(src, dst) != 0)
-    {
-        cout << "Error: Filtering failed!" << endl;
-        return CANT_PROCESS;
-    }
-
+    const std::string caption = "OpenCV Sample";
     char key = 0;
-    while(key != 27) // Esc
-        key = app.showFrame("OpenCV Sample", src, dst);
+    Mat dst(src.rows, src.cols, src.type());
+    while (key != 27) // Esc
+    {
+        key = app.showFrame(caption, src, dst);
+    }
 
 	return OK;
 }
