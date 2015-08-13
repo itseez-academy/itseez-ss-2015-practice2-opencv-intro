@@ -6,6 +6,9 @@
 
 #include "processing.hpp"
 
+bool onButtonClicked(cv::Rect onButtonPlace, int x, int y);
+bool offButtonClicked(cv::Rect offButtonPlace, int x, int y);
+
 class Application
 {
  public:
