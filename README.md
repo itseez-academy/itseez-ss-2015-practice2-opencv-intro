@@ -77,13 +77,13 @@ __Дополнительные задачи:__
 
   1. Сделать форк upstream-репозитория (раздел 
      [Общие инструкции по работе с Git](https://github.com/Itseez-NNSU-SummerSchool2015/practice1-devtools#Общие-инструкции-по-работе-с-git)
-	 в практике №1).
+	 в [практической работе по освоению инструментов разработки ПО](https://github.com/Itseez-NNSU-SummerSchool2015/practice1-devtools)).
   2. Клонировать origin к себе на локальную машину (раздел 
      [Общие инструкции по работе с Git](https://github.com/Itseez-NNSU-SummerSchool2015/practice1-devtools#Общие-инструкции-по-работе-с-git)
-	 в практике №1).
-  3. Скомпилировать и запустить сэмпл на картинке(раздел 
+	 в [практической работе по освоению инструментов разработки ПО](https://github.com/Itseez-NNSU-SummerSchool2015/practice1-devtools)).
+  3. Скомпилировать и запустить сэмпл на картинке (раздел 
      [Сборка проекта с помощью CMake и MS VS](https://github.com/Itseez-NNSU-SummerSchool2015/practice1-devtools#Сборка-проекта-с-помощью-cmake-и-microsoft-visual-studio)
-	 в практике №1).
+	 в [практической работе по освоению инструментов разработки ПО](https://github.com/Itseez-NNSU-SummerSchool2015/practice1-devtools)).
   4. Создать копию директории с сэмплом, добавить ее построение в общий
      `CMakeLists.txt`.
   5. Убедиться, что новый сэмпл успешно собирается и запускается. 
@@ -99,7 +99,7 @@ __Дополнительные задачи:__
     (см. перечень ниже) и прислать Rull Request.
      - Простой перевод в оттенки серого (функция 
 	   [cvtColor](http://docs.opencv.org/modules/imgproc/doc/miscellaneous_transformations.html#cvtcolor)).
-     - Режим пикселизации (подробнее описано можно прочитать 
+     - Режим пикселизации (подробнее можно прочитать 
 	   [здесь](http://opencv-code.com/tutorials/photo-to-colored-dot-patterns-with-opencv)).
      - Режим применения Канни детектора (пример использования функции
 	   [Canny](http://docs.opencv.org/doc/tutorials/imgproc/imgtrans/canny_detector/canny_detector.html)).
