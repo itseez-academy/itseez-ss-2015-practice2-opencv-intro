@@ -104,29 +104,20 @@ void onButtonsOnOffClick(int eventId, int x, int y, int flags, void *userData)
         elems->state = Application::OnFilter;
         return;
     }
-    if (offButtonClicked(elems->offButtonPlace, x, y))
+    if (onButtonClicked(elems->offButtonPlace, x, y))
     {
         elems->state = Application::OffFilter;
         return;
     }
 }
 
-bool onButtonClicked(cv::Rect onButtonPlace, int x, int y)
+bool onButtonClicked(cv::Rect buttonPlace, int x, int y)
 {
-    if (x < onButtonPlace.x || x > onButtonPlace.x + onButtonPlace.width ||
-        y < onButtonPlace.y || y > onButtonPlace.y + onButtonPlace.height)
+    if (x < buttonPlace.x || x > buttonPlace.x + buttonPlace.width ||
+        y < buttonPlace.y || y > buttonPlace.y + buttonPlace.height)
     {
         return false;
     }
     return true;
 }
 
-bool offButtonClicked(cv::Rect offButtonPlace, int x, int y)
-{
-    if (x < offButtonPlace.x || x > offButtonPlace.x + offButtonPlace.width ||
-        y < offButtonPlace.y || y > offButtonPlace.y + offButtonPlace.height)
-    {
-        return false;
-    }
-    return true;
-}

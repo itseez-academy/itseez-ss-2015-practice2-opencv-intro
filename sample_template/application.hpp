@@ -6,8 +6,7 @@
 
 #include "processing.hpp"
 
-bool onButtonClicked(cv::Rect onButtonPlace, int x, int y);
-bool offButtonClicked(cv::Rect offButtonPlace, int x, int y);
+bool onButtonClicked(cv::Rect buttonPlace, int x, int y);
 void onButtonsOnOffClick(int eventId, int x, int y, int flags, void *userData);
 
 class Application
@@ -46,6 +45,5 @@ class Application
 
     int drawButtons(cv::Mat &display);
     
-    friend bool onButtonClicked(cv::Rect onButtonPlace, int x, int y);
-    friend bool offButtonClicked(cv::Rect offButtonPlace, int x, int y);
+    friend bool onButtonClicked(cv::Rect buttonPlace, int x, int y);
 };
